@@ -21,6 +21,13 @@ export class Geolocator {
                             observer.error('errors.location.timeout');
                             break;
                     }
+
+                    //a more tidy and widely used way to do this, just mentioning
+                    // observer.error({
+                    //     1: 'errors.location.permissionDenied',
+                    //     2: 'errors.location.positionUnavailable',
+                    //     3: 'errors.location.timeout'
+                    // }[error.code])
                 }, opts);
             } else {
                 observer.error('errors.location.unsupportedBrowser');
